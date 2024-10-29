@@ -1,5 +1,6 @@
 import React from 'react';
 import Dash from './Dash';
+import Image from 'next/image';
 
 const ServicesData = [
   {
@@ -42,7 +43,13 @@ const Services = () => {
         <div className='grid md:grid-cols-2 lg:grid-cols-4 gap-10 mt-8'>
           {ServicesData.map((service, index) => (
             <div key={index} className='p-6 border rounded-lg shadow-md hover:shadow-lg transition'>
-              <img src={service.img} alt={service.title} className='w-full h-48 object-cover rounded-md mb-4' />
+              <Image
+                src={service.img}
+                alt={service.title}
+                className='w-full h-48 object-cover rounded-md mb-4'
+                width={200} // Specify width
+                height={200} // Specify height
+              />
               <h3 className='font-medium text-xl'>{service.title}</h3>
               <p className='text-gray-700'>{service.desc}</p>
             </div>
